@@ -43,6 +43,7 @@ import android.widget.BaseAdapter;
 import android.widget.Checkable;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -728,7 +729,7 @@ public class DragSortListView extends ListView {
                 }
             } else {
                 child = mAdapter.getView(position, null, DragSortListView.this);
-                if (child instanceof Checkable) {
+                if (child instanceof TextView) {
                     v = new DragSortItemViewCheckable(getContext());
                 } else {
                     v = new DragSortItemView(getContext());
