@@ -20,3 +20,6 @@ local.properties
 # Eclipse project files
 .classpath
 .project
+
+library/build/
+library/drag-sort-listview-library.iml
