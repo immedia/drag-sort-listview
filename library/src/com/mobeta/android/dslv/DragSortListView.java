@@ -1949,16 +1949,15 @@ public class DragSortListView extends ListView {
                 mSampleViewTypes = new View[typeCount];
             }
 
-            if (type >= 0) {
+            if (type < 0 || type >= mSampleViewTypes.length) {
+                v = adapter.getView(position, null, this);
+            } else {
                 if (mSampleViewTypes[type] == null) {
                     v = adapter.getView(position, null, this);
                     mSampleViewTypes[type] = v;
                 } else {
                     v = adapter.getView(position, mSampleViewTypes[type], this);
                 }
-            } else {
-                // type is HEADER_OR_FOOTER or IGNORE
-                v = adapter.getView(position, null, this);
             }
 
             // current child height is invalid, hence "true" below
